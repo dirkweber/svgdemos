@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+]>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<style type="text/css">
+		<![CDATA[
+
+			.slice{
+				fill:#466DB7;
+				stroke:#466DB7;
+				stroke-width:20;
+			}
+
+			.line{
+				fill:none;
+				stroke:white;
+				stroke-width:2;
+			}
+			.mask{
+				fill:white;
+				stroke:black;
+				stroke-width:324px;
+			}
+		]]>
+	</style>
+
+	<defs>
+ 		<mask id="mask-left-right">
+			<rect class="mask" width="486px" height="100%" x="-162px"/>
+		</mask>
+
+ 		<mask id="mask-top-bottom">
+			<rect class="mask" width="100%" height="486px" y="-162px"/>
+		</mask>
+
+ 		<mask id="mask-center">
+			<rect class="mask" width="100%" height="100%"/>
+		</mask>
+
+		<symbol class="edge" id="edge" preserveAspectRatio="none" width="162px" height="300px" viewBox="0 0 162 300">
+			<path class="slice" d="M9.672,0l0.072,113.171c0,4.728,4.363,11.545,9.696,15.151c0,0,13.728,9.281,13.728,21.596
+			S19.44,171.515,19.44,171.515c-5.333,3.605-9.696,10.424-9.696,15.15L9.618,299.993L200.119,300V0.075L9.672,0z"/>
+
+			<path class="line" d="M9.672,0l0.072,113.171c0,4.728,4.363,11.545,9.696,15.151c0,0,13.728,9.281,13.728,21.596
+			S19.44,171.515,19.44,171.515c-5.333,3.605-9.696,10.424-9.696,15.15L9.618,299.993L200.119,300V0.075L9.672,0z"/>
+		</symbol>
+
+		<symbol  id="edgeTopBottom" preserveAspectRatio="none" width="200" height="162" viewBox="0 0 200 162">
+   			<use xlink:href="#edge" transform="rotate(90)" width="162" height="200" x="1" y="-200"/>
+		</symbol> 
+
+		<symbol  id="cornerbevel" width="162px" height="162px" viewBox="0 0 162 162">
+			<path d="M162,9.827h-21.435c-5.5,0-10,4.5-10,10v34.414c-1.693,42.134-36.342,75.783-78.892,75.783v0.208H19.975
+			c-5.5,0-10,4.5-10,10v21.435L162,162v-0.334h0.145L162,9.827z"/>
+		</symbol>
+
+		<symbol  id="corner" width="162px" height="162px" viewBox="0 0 162 162">
+			<use xlink:href="#cornerbevel" class="slice" y="1"/>
+			<use xlink:href="#cornerbevel" class="line" width="164px" height="164px" y="1"/>
+
+			<path fill="#466DB7" d="M45.788,15.065c4.04,3.733,10.649,3.733,14.688,0l8.958-8.278c4.04-3.733,7.017-2.299,6.617,3.187
+			l-0.887,12.165c-0.4,5.485,3.721,10.653,9.158,11.484l12.055,1.842c5.438,0.831,6.173,4.053,1.635,7.16l-10.062,6.891
+			c-4.538,3.107-6.009,9.552-3.269,14.32l6.077,10.575c2.74,4.769,0.68,7.353-4.579,5.742l-11.662-3.571
+			c-5.259-1.61-11.214,1.257-13.233,6.374l-4.479,11.345c-2.02,5.116-5.324,5.116-7.344,0l-4.479-11.345
+			c-2.02-5.116-7.975-7.984-13.233-6.374l-11.663,3.571c-5.259,1.61-7.319-0.973-4.579-5.742l6.077-10.575
+			c2.741-4.769,1.27-11.213-3.268-14.32L8.251,42.624c-4.538-3.107-3.803-6.33,1.634-7.16l12.058-1.842
+			c5.437-0.831,9.558-5.999,9.158-11.484L30.214,9.974c-0.4-5.485,2.577-6.919,6.617-3.187L45.788,15.065z"/>
+		</symbol>
+  	</defs>
+  	
+	<!-- top-left corner: -->
+	<use xlink:href="#corner" width="162px" height="162px"/>
+
+	<!-- bottom-left corner: -->
+	<use xlink:href="#corner" transform="scale(1, -1)" width="162px" height="162px" x="0" y="-100%"/>
+
+	<!-- top-right corner: -->
+	<use xlink:href="#corner" transform="scale(-1, 1)" width="162px" height="162px" x="-100%" y="0" />
+
+	<!-- bottom-right corner: -->
+	<use xlink:href="#corner" transform="scale(-1, -1)" width="162px" height="162px" x="-100%" y="-100%"/>
+
+	<!-- top edge: -->
+	<use class="edge-fallback" xlink:href="#edgeTopBottom" width="100%" height="162" x="0" y="0"  mask="url(#mask-top-bottom)"/>
+
+	<!-- bottom edge: -->
+	<use class="edge-fallback" xlink:href="#edgeTopBottom" transform="scale(1,-1)" width="100%" height="162" x="0" y="-100%"  mask="url(#mask-top-bottom)"/>
+
+	<!-- right edge: -->
+   	 <use class="edge-fallback" xlink:href="#edge" transform="scale(-1,1)" width="162" height="100%" x="-100%" y="0" mask="url(#mask-left-right)"/> 
+
+   	 <!-- left edge: -->
+    <use class="edge-fallback" xlink:href="#edge" width="162" height="100%" x="0" y="0" mask="url(#mask-left-right)"/>
+
+   	 <!-- center: -->
+    <rect class="slice" width="100%" height="100%" mask="url(#mask-center)"/>	
+</svg>

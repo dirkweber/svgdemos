@@ -1,0 +1,31 @@
+html{
+      height:  97%;
+}
+
+body{
+      height:  100%;
+      background: #2B374B;
+      background-size: cover;
+      background-position: fixed;
+}
+
+p{
+      color: silver;
+      display: block;
+      font: 9px/1 sans-serif;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      padding-top: 5px;
+}
+
+.zombie{
+      display: block;
+      position: relative;
+      width: 70%;
+      height: 70%;
+      min-width: 277px;
+      min-height: 280px;
+      margin: 20px auto;
+      background-size: contain;
+}

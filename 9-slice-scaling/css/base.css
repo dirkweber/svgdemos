@@ -1,0 +1,58 @@
+html{
+      height: 100%;
+      background: white;
+      overflow: auto;
+}
+  
+body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: auto;
+      min-width: 600px;
+      background: -moz-linear-gradient(top, #bdcc7c 0%, #d6f2b8 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bdcc7c), color-stop(100%,#d6f2b8));
+      background: -webkit-linear-gradient(top, #bdcc7c 0%,#d6f2b8 100%);
+      background: -o-linear-gradient(top, #bdcc7c 0%,#d6f2b8 100%);
+      background: -ms-linear-gradient(top, #bdcc7c 0%,#d6f2b8 100%);
+      background: linear-gradient(to bottom, #bdcc7c 0%,#d6f2b8 100%);
+      background-position: fixed;
+} 
+
+img, svg, embed{
+      display: block;
+      width: 70%;
+      height: 70%;
+      margin: 0.6em auto;
+}
+
+.almost, .perfect, .frame{
+      width: 50%;
+      background: url(../img/9slice-almost.svg) no-repeat;
+      background-size: contain;
+      margin: 1em auto;
+      font: 2.6em/1.2 'Sonsie One', cursive;
+      text-align: center;
+      padding: 3em;
+      color: white;
+}
+
+.perfect{
+      background-image: url(../img/9slice-perfect.svg);
+}
+
+.frame{
+      background-image: url(../img/imageframe.svg);
+}
+
+.outer{
+      display: table-cell;
+      vertical-align: middle;
+}
+
+.small{
+      display: block;
+      font-size: 0.5em;
+      margin-top: 1em;
+      padding: 0 5em;
+}

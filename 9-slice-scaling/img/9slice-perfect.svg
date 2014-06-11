@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+]>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<style type="text/css">
+		<![CDATA[
+			.edge-fallback{
+			}
+
+			.slice{
+				fill:#466DB7;
+				stroke:#466DB7;
+				stroke-width:20;
+			}
+
+			.line{
+				fill:none;
+				stroke:white;
+				stroke-width:2;
+			}
+			.mask{
+				fill:white;
+				stroke:black;
+				stroke-width:324px;
+			}
+		]]>
+	</style>
+
+	<defs>
+		<symbol  id="star" width="162px" height="162px" viewBox="0 0 162 162" preserveAspectRatio="none" >
+			<path fill="white" d="M73.518,4.898c3.856,7.091,10.165,7.091,14.021,0c3.854-7.092,8.217-6.4,9.692,1.535
+			c1.476,7.935,7.476,9.885,13.333,4.332c5.859-5.553,9.794-3.546,8.745,4.457c-1.048,8.001,4.057,11.711,11.344,8.241
+			c7.287-3.472,10.41-0.349,6.938,6.938c-3.469,7.288,0.24,12.392,8.241,11.344c8.004-1.049,10.01,2.887,4.457,8.745
+			c-5.553,5.857-3.603,11.858,4.333,13.334c7.935,1.476,8.626,5.838,1.535,9.692c-7.092,3.856-7.092,10.165,0,14.021
+			c7.091,3.854,6.399,8.217-1.535,9.692c-7.936,1.476-9.886,7.476-4.333,13.333c5.551,5.859,3.547,9.794-4.457,8.745
+			c-8.003-1.048-11.71,4.057-8.241,11.344c3.472,7.287,0.349,10.41-6.938,6.938c-7.287-3.469-12.392,0.24-11.344,8.241
+			c1.049,8.004-2.886,10.01-8.745,4.457c-5.857-5.553-11.857-3.603-13.333,4.333c-1.476,7.935-5.838,8.626-9.692,1.535
+			c-3.856-7.092-10.165-7.092-14.021,0c-3.854,7.091-8.217,6.399-9.692-1.535c-1.477-7.936-7.477-9.886-13.334-4.333
+			c-5.858,5.553-9.794,3.547-8.745-4.457c1.048-8.001-4.056-11.71-11.344-8.241c-7.287,3.472-10.41,0.349-6.938-6.938
+			c3.47-7.287-0.24-12.392-8.241-11.344c-8.004,1.049-10.01-2.886-4.457-8.745c5.553-5.857,3.603-11.857-4.332-13.333
+			c-7.936-1.476-8.627-5.838-1.535-9.692c7.091-3.856,7.091-10.165,0-14.021c-7.092-3.854-6.4-8.217,1.535-9.692
+			c7.935-1.476,9.885-7.477,4.332-13.334c-5.551-5.858-3.547-9.794,4.457-8.745c8.003,1.048,11.711-4.056,8.241-11.344
+			c-3.472-7.287-0.349-10.41,6.938-6.938c7.288,3.47,12.392-0.24,11.344-8.241c-1.049-8.003,2.887-10.01,8.745-4.457
+			c5.857,5.553,11.857,3.603,13.334-4.332C65.301-1.502,69.663-2.193,73.518,4.898z"/>
+		</symbol>
+
+		<symbol  id="angle" width="162px" height="162px" viewBox="0 0 162 162">
+			<path d="M162,9.827h-21.435c-5.5,0-10,4.5-10,10v34.414c-1.693,42.134-36.342,75.783-78.892,75.783v0.208H19.975
+			c-5.5,0-10,4.5-10,10v21.435L162,162v-0.334h0.145L162,9.827z"/>
+		</symbol>
+
+		<symbol  id="corner" width="162px" height="162px" viewBox="0 0 162 162">
+			<use xlink:href="#angle" class="slice" y="1"/>
+			<use xlink:href="#angle" class="line" width="164px" height="164px" x="0" y="1"/>
+
+			<path fill="#466DB7" class="st0" d="M45.788,15.065c4.04,3.733,10.649,3.733,14.688,0l8.958-8.278c4.04-3.733,7.017-2.299,6.617,3.187
+			l-0.887,12.165c-0.4,5.485,3.721,10.653,9.158,11.484l12.055,1.842c5.438,0.831,6.173,4.053,1.635,7.16l-10.062,6.891
+			c-4.538,3.107-6.009,9.552-3.269,14.32l6.077,10.575c2.74,4.769,0.68,7.353-4.579,5.742l-11.662-3.571
+			c-5.259-1.61-11.214,1.257-13.233,6.374l-4.479,11.345c-2.02,5.116-5.324,5.116-7.344,0l-4.479-11.345
+			c-2.02-5.116-7.975-7.984-13.233-6.374l-11.663,3.571c-5.259,1.61-7.319-0.973-4.579-5.742l6.077-10.575
+			c2.741-4.769,1.27-11.213-3.268-14.32L8.251,42.624c-4.538-3.107-3.803-6.33,1.634-7.16l12.058-1.842
+			c5.437-0.831,9.558-5.999,9.158-11.484L30.214,9.974c-0.4-5.485,2.577-6.919,6.617-3.187L45.788,15.065z"/>
+		</symbol>
+
+		<symbol id="leftRight" viewBox="0 2 162 296"  preserveAspectRatio="none">
+			<path d="M10.604,299.043h152.272V0H10.604c0,24.92,25.654,24.92,25.654,49.842S10.604,74.764,10.604,99.686
+			c0,24.92,25.654,24.92,25.654,49.84c0,24.918-25.654,24.918-25.654,49.84c0,24.92,25.654,24.92,25.654,49.84
+			S10.604,274.125,10.604,299.043z"/>
+		</symbol>
+
+		<symbol  id="topBottom" viewBox="0 0 200 162"  preserveAspectRatio="none">
+			<use xlink:href="#leftRight" transform="rotate(90)" width="162" height="200" x="0" y="-200"/>
+		</symbol> 
+  	</defs>
+  	
+	<!-- top-left corner: -->
+	<use xlink:href="#corner" width="162px" height="162px"/>
+
+	<use xlink:href="#corner" transform="scale(1, -1)" style="overflow:visible;" width="162px" height="162px" x="0" y="-100%"/>
+
+	<!-- top-right corner: -->
+	<use xlink:href="#corner" transform="scale(-1, 1)" width="162px" height="162px" x="-100%" y="0" />
+
+	<!-- bottom-right corner: -->
+	<use xlink:href="#corner" transform="scale(-1, -1)" width="162px" height="162px" x="-100%" y="-100%"/>
+
+	<!-- top edge: -->
+  	<switch>
+		<foreignObject x="0" y="0" width="100%" height="162px">
+	      	<div xmlns="http://www.w3.org/1999/xhtml" style="margin: 0 160px;">
+
+       			<svg width="100%" height="162" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+       				<use xlink:href="#topBottom" class="slice" width="100%" height="162" x="0" y="0" style="overflow:visible;"/>
+       				<use xlink:href="#topBottom" class="line" width="100%" height="162" x="0" y="0" style="overflow:visible;"/>
+				</svg>
+
+	      	</div>
+	    </foreignObject>
+	</switch>
+
+	<!-- bottom edge: -->
+	<switch>
+		<foreignObject x="0" y="-100%" width="100%" height="162px" transform="scale(1, -1)" >
+	      	<div xmlns="http://www.w3.org/1999/xhtml" style="margin: 0 162px;">
+   				
+   				<svg width="100%" height="162" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+   					<use xlink:href="#topBottom"  class="slice" width="100%" height="162" x="0" y="0" style="overflow:visible;"/>
+   					<use xlink:href="#topBottom"  class="line" width="100%" height="162" x="0" y="0" style="overflow:visible;"/>				
+				</svg>
+
+	      	</div>
+	    </foreignObject>
+	</switch>
+	    
+    <!-- right edge: -->
+	<switch>
+		<foreignObject x="0" y="0" width="162px" height="100%" >
+      		<div xmlns="http://www.w3.org/1999/xhtml" style="position: absolute; top: 162px; bottom: 162px; width: 162px;">
+
+       			<svg width="162px" height="100%" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+       				<use xlink:href="#leftRight" class="slice" width="162" height="100%" x="0" y="0" />
+       				<use xlink:href="#leftRight" class="line" width="162" height="100%" x="0" y="0" />
+				</svg>
+
+      		</div>
+    	</foreignObject>
+	</switch>
+
+    <!-- left edge: -->
+   	<switch>
+   		<foreignObject x="0" y="0" width="100%" height="100%" >
+
+      		<div xmlns="http://www.w3.org/1999/xhtml" style="position: absolute; top: 162px; bottom: 162px; width: 100%;">
+
+       			<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 26 100" preserveAspectRatio="xMaxYMin meet"> 
+       				<use xlink:href="#leftRight" class="slice" width="162" height="100%" x="-100%" y="0" transform="scale(-1, 1)"/>
+       				<use xlink:href="#leftRight" class="line" width="162" height="100%" x="-100%" y="0" transform="scale(-1, 1)"/>
+				</svg>
+
+      		</div>
+    	</foreignObject>
+	</switch>
+
+
+    <!-- center: -->
+	<switch>
+   		<foreignObject x="0" y="0" width="100%" height="100%" >
+      		<div xmlns="http://www.w3.org/1999/xhtml" style="position: absolute; top: 162px; bottom: 162px; left: 162px; right: 162px;">
+      			
+       			<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 162 162" preserveAspectRatio="none"> 
+       				<rect class="slice" width="100%" height="100%"/>
+       				<use xlink:href="#star" style="opacity: 0.3" width="100%" height="100%"/>	
+				</svg>
+
+      		</div>
+    	</foreignObject>
+	</switch>
+</svg>

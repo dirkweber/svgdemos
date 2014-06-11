@@ -1,0 +1,65 @@
+body{
+      height:  100%;
+      padding: 40px 0 0;
+      background: #e8e7de;
+      background: -moz-linear-gradient(-45deg, #7A7236 0%, #D3D580 100%);
+      background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,##7A7236), color-stop(100%,#D3D580));
+      background: -webkit-linear-gradient(-45deg, #7A7236 0%,#D3D580 100%);
+      background: -o-linear-gradient(-45deg, #7A7236 0%,#D3D580 100%);
+      background: -ms-linear-gradient(-45deg, #7A7236 0%,#D3D580 100%);
+      background: linear-gradient(135deg, #7A7236 0%,#D3D580 100%);
+      background-size: contain;
+      background-attachment:fixed;
+      color: #FFCC99;
+}
+
+.fourslice{
+      display: block;
+      position: relative;
+      width: 70%;
+      padding: 30px 62px 70px;
+      min-width: 300px;
+      min-height: 340px;
+      margin: 20px auto;
+      background: url("../img/4slice.svg") no-repeat center center;
+      background-size: contain;
+      text-align: center;
+      line-height: 0.5;
+}
+
+.pattern{
+      background-image: url("../img/4slicewithpattern.svg") 
+}
+
+section{
+      padding: 10px 10px 30px;
+      margin: 0 auto;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.4);
+      width: 80%;
+}
+
+h2{
+      display: inline-block;
+      text-align: center;
+      font: 60px/1 'Lily Script One', sans-serif;
+      margin: 50px 0 20px;
+}
+
+h3, h4{
+      display: inline-block;
+      padding:0;
+      text-align: center;
+      color:black;
+      font: 18px/0.9 'Amaranth', sans-serif;
+      width: 70%;
+      margin-bottom: 0;
+}
+
+h4{
+      padding-top: 20px;
+      border-top: dotted;
+}
