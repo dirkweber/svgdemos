@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  height:100%;
+}
+
+body{
+  background: white;
+  height:100%;
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  overflow: hidden;
+  padding: 2em;
+  box-sizing: border-box;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.corona{
+  width: 420px;
+  height: 400px;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  z-index: 100;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+}
+
+.beer{
+  position: absolute;
+  z-index: 0;
+  color: #69542C;
+  font: 1.3em/1.3 Georgia, "Times New Roman", Times, serif;
+  -webkit-transform: perspective(700px) rotateX(35deg) translateZ(200px);
+  -moz-transform: perspective(700px) rotateX(35deg) translateZ(200px);
+  -ms-transform: perspective(700px) rotateX(35deg) translateZ(200px);
+  transform: perspective(700px) rotateX(35deg) translateZ(200px);
+}
+
+h1{
+  font-size: 2em;
+  text-align: center;
+}
+
+p{
+  margin-bottom: 0.4em;
+}
