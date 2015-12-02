@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semi translucency</title>
+  <style>
+
+    html{
+      height: 100%;
+      font-family: georgia, serif;
+    }
+
+    body{
+      background: #D96D00;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+    *:focus{
+      outline: none;
+    }
+    ::selection {
+      background: #D96D00;
+      color: white;
+    }
+    ::-moz-selection {
+      background: #D96D00;
+      color: white;
+    }
+
+    p{
+      background: black;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      top: 50%;
+      -webkit-transform: translateY( -50% );
+      transform: translateY( -50% );
+      color: #D96D00;
+      font-size: 16px;
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+      text-align: justify;
+      -webkit-filter: url(#filter);
+      filter: url(#filter);
+    }
+
+      svg{
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /*width: 320px;
+        height: 600px;*/
+      }
+    </style>
+  </head>
+
+  <body>
+      <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <filter id="filter">
+            <feColorMatrix in="SourceGraphic"  result="LIGHTENED" type="matrix" 
+      values="3.3 0 0 0 0,
+            0 3.3 0 0 0,
+            0 0 3.3 0 0,
+            0 0 0 1 0"/>  
+            <feGaussianBlur color-interpolation-filters="sRGB" id="blur_1" stdDeviation="4" result="BLUR" in="LIGHTENED"/>   
+            <feImage id="feimage" xlink:href='data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="100" height="100"><rect width="100%" height="100%" fill="black"/></svg>' x="80px" y="80px" width="240px" height="240px" result="mask" preserveAspectRatio="none"/>
+
+            <feComposite in2="mask" in="BLUR" operator="in" result="comp" /> 
+            <feMerge  result="merge">
+               <feMergeNode in="SourceGraphic" /> 
+             <feMergeNode in="comp" />  
+            </feMerge>
+          </filter>
+      </svg>
+      <p contenteditable = "true">
+      I have been very lucky with fossil bones; I have fragments of at least six distinct animals; as many of these are teeth, shattered and rolled as they have been, I trust they will be recognized. I have paid all the attention I am capable of, to their geological site; but of course it is too long a story for a letter. 1st. the tarsi and meta-tarsi, very perfect, of a cavia;1 2d. the upper jaw and head of some very large animal, with four square hollow molars, and the head greatly produced in front. I at first thought it belonged either to the megalonyx or megatherium.2 In confirmation of this, in the same formation, I found a large surface of the osseous polygonal plates, which "late observations" (what are they?) have shewn to belong to the megatherium. Immediately I saw them I thought they must belong to an enormous armadillo, living species of which genus are so abundant here. 3d. The lower jaw of some large animal, which, from the molar teeth I should think belonged to the edentata;3 4th. large molar teeth, which in some respects would seem to belong to some enormous species of rodentia; 5th. also some smaller teeth belonging to the same order, &c. &c.—They are mingled with marine shells, which appear to me identical with existing species. But since they were deposited in their beds, several geological changes have taken place in the country
+      </p>
+  </body>
+  </html>

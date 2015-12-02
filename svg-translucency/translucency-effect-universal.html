@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semi translucency</title>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <style>
+
+    html{
+      height: 100%;
+    }
+
+    body{
+      background: #424A5E;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    ::selection {
+      background: black;
+    }
+
+    ::-moz-selection {
+      background: black;
+    }
+
+    .klikbut{
+      overflow: hidden;
+    }
+
+    .klikbut__text{
+      font-family: 'Varela Round', sans-serif;
+      font-size: 40px;
+      fill: white;
+      pointer-events: none;
+      transition: fill .3s;
+      -webkit-transition: fill .3s;
+    }
+
+    .klikbut__bg{
+      fill: #9F6DD8;
+      cursor: pointer;
+      transition: fill .2s, transform .2s cubic-bezier(0.005, 0.625, 0.370, 1.650) .2s;
+      -webkit-transition: fill .2s, -webkit-transform .2s cubic-bezier(0.005, 0.625, 0.370, 1.650) .2s;
+      transform: scale(1);
+    }
+
+    .klikbut:hover .klikbut__bg{
+      fill: white;
+      transform: translate(-20px, -20px) scale(1.5);
+      -ms-transform: translate(-20px, -20px) scale(1.5);
+      -webkit-transform: scale(1.5) translate(-15%, -15%);
+    }
+
+    .klikbut:hover .klikbut__text{
+      fill: #9F6DD8;
+    }
+
+    .layer{
+      width: 400px;
+      height: 400px;
+      position: relative;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY( -50% );
+      -webkit-transform: translateY( -50% );
+      }
+
+      .modal,
+      .modal--init{
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: -100px;
+        top: -100px;
+        z-index: 100;
+        padding: 60px 20px 20px;
+        box-sizing: border-box;
+        text-align: center;
+        font: 0/1 'Varela Round', sans-serif;
+        overflow: hidden;
+        opacity: 0;
+      }
+
+      .modal--inactive{
+        -webkit-animation: modalout .3s ease-out;
+        animation: modalout .3s ease-out;
+      }
+
+      .modal--active{
+        width: 360px;
+        height: 360px;
+        left: 20px;
+        top: 20px;
+        font-size: 46px;
+        opacity: 1;
+        -webkit-animation: modalin .8s ease-out;
+        animation: modalin .8s ease-out;
+      }
+
+      .modal__closebut{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 160px;
+        top: 40px;
+        background-color: #4B5969;
+        border: none;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        text-indent: -100px;
+      }
+
+      .modal__closebut::before,
+      .modal__closebut::after{
+        position: absolute;
+        left: 19px;
+        top: 5px;
+        width: 2px;
+        height: 30px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        background: white;
+        content: "";
+        transition: transform .4s ease-in;
+        -webkit-transition: -webkit-transform .4s ease-in;
+      }
+
+      .modal__closebut::after{
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+
+      .modal__closebut:hover::before{
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+      }
+
+      .modal__closebut:hover:after{
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+      }
+
+      .modal__text{
+        position: relative;
+        color: #424A5E;
+        color: white;
+        color: #697277;
+      }
+
+      .modal__closebut:hover{
+        background-color: #D9A7F2;
+      }
+
+      .modal__closebut:focus{
+        outline: none;
+      }
+
+      svg{
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        /*width: 320px;
+        height: 600px;*/
+      }
+
+      #rect{
+        transition: transform 0.4s ease-in-out;
+      }
+
+      #filtered{
+        filter: url(#filter);
+      }
+
+      #fimage{
+        width: 300px;
+        height: 300px;
+        background: #424A5E;
+      }
+
+      @keyframes scaleme {
+        50% {
+          transform: scale( 1.5, 1 ); 
+        }
+
+        to {
+          transform: scale( 1.5 );
+        }
+      }
+
+      @-webkit-keyframes scaleme {
+        50% {
+          -webkit-transform: scale( 1.5, 1 ); 
+        }
+
+        to {
+          -webkit-transform: scale( 1.5 );
+        }
+      }
+
+      @keyframes modalin {
+        from {
+          transform: scale( 1.3 );
+          opacity: 0;
+        }
+
+        50%{
+          transform: scale( 1.3 );
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes modalin {
+        from {
+          -webkit-transform: scale( 1.3 );
+          opacity: 0;
+        }
+
+        50%{
+          -webkit-transform: scale( 1.3 );
+          opacity: 0;
+        }
+      }
+
+      @keyframes modalout {
+        from{
+          width: 360px;
+          height: 360px;
+          left: 20px;
+          top: 20px;
+          font-size: 50px;
+          opacity: 0.75;
+        }
+        
+        to {
+          transform: scale( 1.3 );
+          width: 360px;
+          height: 360px;
+          left: 20px;
+          top: 20px;
+          font-size: 50px;
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes modalout {
+        from{
+          width: 360px;
+          height: 360px;
+          left: 20px;
+          top: 20px;
+          font-size: 50px;
+          opacity: 0.75;
+        }
+        
+        to {
+          -webkit-transform: scale( 1.3 );
+          width: 360px;
+          height: 360px;
+          left: 20px;
+          top: 20px;
+          font-size: 50px;
+          opacity: 0;
+        }
+      }
+
+    </style>
+    <!---->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenLite.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/easing/EasePack.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/plugins/AttrPlugin.min.js"></script> 
+  </head>
+  <body>
+    <div class="layer">
+      <div class="modal" id="modal">
+        <button class="modal__closebut" id="closebut">close</button>
+        <p  class="modal__text">Click button to get rid of this annoying blur!</p>
+      </div>
+
+      <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+        <filter id="filter">
+            <feGaussianBlur color-interpolation-filters="sRGB" id="blur_1" stdDeviation="0" result="blur"/>
+
+            <feImage id="feimage" xlink:href='data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20%20width%3D%22100%22%20height%3D%22100%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20%2F%3E%3C%2Fsvg%3E' x="192px" y="192px" width="16px" height="16px" result="mask" preserveAspectRatio="none"/>
+
+            <feComposite in2="mask" in="blur" operator="in" result="comp" />
+            <feMerge  result="merge">
+              <feMergeNode in="SourceGraphic" /> 
+              <feMergeNode in="comp" />
+            </feMerge>
+          </filter>
+        </defs>
+        <svg id="filtered" x="0" y="0" width="400px" height="400px">
+          <image x="0" y="0" width="400px" height="400px" preserveAspectRatio = "xMidYMid"
+          xlink:href="img/pattern-2.svg" ></image>
+
+          <svg role="button" id="klikbut" class="klikbut" x="160" y="160" width="80px" height="80px" style="overflow: visible">
+            <desc>Click to open modal</desc>
+            <rect class="klikbut__bg" width="80px" height="80px"/>
+            <text class="klikbut__text" x="7" y="53">kliq</text>
+          </svg>
+        </svg>
+      </svg>
+    </div>
+    <script>
+      (function(){
+        var feimage = document.getElementById("feimage");
+        var blur = document.getElementById("blur_1");
+        var openBut =  document.getElementById("klikbut");
+        var closeBut =  document.getElementById("closebut");
+        var modal =  document.getElementById("modal");
+        var modalClasses = modal.classList;
+
+        openBut.addEventListener("click", tweenMeIn, true);
+        closeBut.addEventListener("click", tweenMeOut, true);
+
+        function tweenMeIn(){
+          TweenLite.to(feimage, .8, {ease: Bounce.easeOut, attr:{x:"20", y:"20", width:"360", height:"360"}});
+          TweenLite.to(blur, .4, {ease: Bounce.easeOut, attr:{stdDeviation:"20"}});
+          modalClasses.toggle('modal--active', true);
+        }
+
+        function tweenMeOut(){
+          TweenLite.to(feimage, .8, {ease: Bounce.easeOut, attr:{x:"192", y:"192", width:"16", height:"16"}});
+          TweenLite.to(blur, .4, {ease: Bounce.easeOut, attr:{stdDeviation:"0"}});
+          modalClasses.toggle('modal--active', false);
+          modalClasses.toggle('modal--inactive', true);
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semi translucency</title>
+  <style>
+    @font-face {
+      font-family: 'bariol_light';
+      src: url('fonts/bariol_light-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html{
+      height: 100%;
+    }
+
+    body{
+      background: #3E4103;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    ::selection {
+      background: black;
+    }
+
+    ::-moz-selection {
+      background: black;
+    }
+
+    .layer{
+      width: 400px;
+      height: 400px;
+      position: relative;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY( -50% );
+      -webkit-transform: translateY( -50% );
+      }
+
+      svg{
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+      }
+
+      #mask{
+        animation: scaleme 2s ease-in-out infinite;  
+        -webkit-animation: scaleme 2s ease-in-out infinite;
+      }
+
+      #filtered{
+        filter: url(#filter);
+      }
+
+      
+
+      @keyframes scaleme {
+        from{
+          transform: translate(180px, 200px) scale( 0.1, 0 );
+        }
+
+        25%{
+          transform: translate(180px, 40px) scale( 0.1, 0.8 );       
+        }
+
+        50% {
+          transform: translate(40px, 40px) scale( 0.8, 0.8 ); 
+        }
+
+        75% {
+          transform: translate(40px, 180px) scale( 0.8, 0.1 ); 
+        }
+
+        to{
+          transform: translate(200px, 180px) scale( 0, 0.1 );
+        }
+      }
+
+      @-webkit-keyframes scaleme {
+        from{
+          -webkit-transform: translate(180px, 200px) scale( 0.1, 0 );
+        }
+
+        25%{
+          -webkit-transform: translate(180px, 40px) scale( 0.1, 0.8 );       
+        }
+
+        50% {
+          -webkit-transform: translate(40px, 40px) scale( 0.8, 0.8 ); 
+        }
+
+        75% {
+          -webkit-transform: translate(40px, 180px) scale( 0.8, 0.1 ); 
+        }
+
+        to{
+          -webkit-transform: translate(200px, 180px) scale( 0, 0.1 );
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="layer">
+      <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <rect id="mask" width="100%" height="100%" />
+          <filter id="filter">
+            <feGaussianBlur color-interpolation-filters="sRGB" id="blur_1" stdDeviation="10" result="blur"/>
+
+            <feImage id="feimage" xlink:href='#mask' result="mask" />
+
+            <feComposite in2="mask" in="blur" operator="in" result="comp" />
+            <feMerge  result="merge">
+              <feMergeNode in="SourceGraphic" /> 
+              <feMergeNode in="comp" />
+            </feMerge>
+          </filter>
+        </defs>
+          <image id="filtered"x="0" y="0" width="400px" height="400px" preserveAspectRatio="xMidYMid" xlink:href="img/pattern-1.svg" ></image>
+      </svg>
+    </div>
+  </body>
+</html>

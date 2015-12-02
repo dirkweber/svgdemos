@@ -1,7 +1,7 @@
 # A collection of experiments in responsive SVG
 ----------
 
-This is a pool for several of my SVG experiments. I will put new stuff in here sometimes, maybe you want to check for new stuff from time to time.
+This is a pool for several of my SVG experiments. I will put new stuff in here sometimes, maybe you want to check from time to time.
 
 ## License
 
