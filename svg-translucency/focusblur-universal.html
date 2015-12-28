@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Semi translucency</title>
-  <style>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Semi translucency</title>
+    <style>
 
-    html{
-      height: 100%;
-    }
+      html{
+        height: 100%;
+      }
 
-    body{
-      background: silver;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-    }
+      body{
+        background: silver;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+      }
 
       svg{
         display: block;
@@ -36,29 +36,28 @@
     </style>
   </head>
   <body>
-      <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1200 900">
-        <defs>
+    <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1200 900">
+      <defs>
         <style>
-        .filtered{
-        -webkit-filter: url(#filter);
-        filter: url(#filter);
-        transition: 1s;
-        -webkit-transition: 1s;
-      }
+          .filtered{
+            -webkit-filter: url(#filter);
+            filter: url(#filter);
+            transition: 1s;
+            -webkit-transition: 1s;
+          }
         </style>
-          <filter id="filter">
-            <feGaussianBlur color-interpolation-filters="sRGB" id="blur_1" stdDeviation="15" result="blur"/>
-            <feImage id="feimage" xlink:href="data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27100%27%20height%3D%27100%27%3E%3Cdefs%3E%3CradialGradient%20id%3D%27gradient%27%20r%3D%2740%25%27%20cx%3D%2750%25%27%20cy%3D%2734%25%27%20fx%3D%2745%25%27%20fy%3D%2735%25%27%20spreadMethod%3D%27pad%27%3E%3Cstop%20offset%3D%278%25%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27%2F%3E%3Cstop%20offset%3D%2760%25%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C%200.7%29%27%2F%3E%3C%2FradialGradient%3E%3ClinearGradient%20id%3D%27l-gradient%27%3E%3Cstop%20offset%3D%2715%25%27%20%20stop-color%3D%27white%27%2F%3E%3Cstop%20offset%3D%2750%25%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27%2F%3E%0A%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20fill%3D%27url%28%23gradient%29%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20%2F%3E%3Crect%20fill%3D%27url%28%23l-gradient%29%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20%2F%3E%3C%2Fsvg%3E" 
-x="-10%" y="-10%" width="140%" height="140%" result="mask" preserveAspectRatio="none"/>
-
-              <feComposite in2="mask" in="blur" operator="in" result="comp" />
-            <feMerge  result="merge">
-              <feMergeNode in="SourceGraphic" />
-               <feMergeNode in="comp" />
-            </feMerge> 
-          </filter>
-        </defs>
-          <image class="filtered" x="0" y="0" width="1200px" height="900px" preserveAspectRatio="xMidYMid" xlink:href="img/aliens.jpg" />
-      </svg>
+        <filter id="filter" x="20"  y="0" width="1200" height="900" filterUnits="userSpaceOnUse">
+          <feGaussianBlur color-interpolation-filters="sRGB" id="blur_1" stdDeviation="15" result="blur"/>
+          <feImage id="feimage" xlink:href="data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27100%27%20height%3D%27100%27%3E%3Cdefs%3E%3CradialGradient%20id%3D%27gradient%27%20r%3D%2740%25%27%20cx%3D%2750%25%27%20cy%3D%2734%25%27%20fx%3D%2745%25%27%20fy%3D%2735%25%27%20spreadMethod%3D%27pad%27%3E%3Cstop%20offset%3D%278%25%27%20stop-color%3D%27%23ffffff%27%20stop-opacity%3D%270%27%20%2F%3E%3Cstop%20offset%3D%2760%25%27%20stop-color%3D%27%23ffffff%27%20stop-opacity%3D%27.7%27%20%2F%3E%3C%2FradialGradient%3E%3ClinearGradient%20id%3D%27l-gradient%27%3E%3Cstop%20offset%3D%2715%25%27%20%20stop-color%3D%27white%27%2F%3E%3Cstop%20offset%3D%2750%25%27%20stop-color%3D%27%23ffffff%27%20stop-opacity%3D%270%27%20%2F%3E%0A%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20fill%3D%27url%28%23gradient%29%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20%2F%3E%3Crect%20fill%3D%27url%28%23l-gradient%29%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20%2F%3E%3C%2Fsvg%3E" 
+          x="-10%" y="-10%" width="140%" height="140%" result="mask" preserveAspectRatio="none"/>
+          <feComposite in2="mask" in="blur" operator="in" result="comp" />
+          <feMerge  result="merge">
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="comp" />
+          </feMerge> 
+        </filter>
+      </defs>
+      <image class="filtered" x="0" y="0" width="1200px" height="900px" preserveAspectRatio="xMidYMid" xlink:href="img/aliens.jpg" />
+    </svg>
   </body>
 </html>
